@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+    <script src="assets/javascript/game.js"></script>
+    <title>RPG</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-3 bg-dark" id="r2d2">
+                    <img src="assets/images/r2d2.png" id="r2d2pic" class="choose-row-pic">
+                </div>
+                <div class="col-sm-3 border bg-dark" id="c3po" class="choose-row-pic">
+                    <img src="assets/images/c3p0.png" id="c3popic" class="choose-row-pic">
+                </div>
+                <div class="col-sm-3" id="bb8">
+                    <img src="assets/images/bb8.png" id="bb8pic" class="choose-row-pic">
+                </div>
+                <div class="col-sm-3" id="gonk">
+                    <img src="assets/images/gonk.png" id="gonkpic" class="choose-row-pic">
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <div class="row"></div>
+        </div>
+    </div>
+</div>
+
+<button id="attack-btn">Attack</button>
+
+<div id="player-health">
+    Your Health: 0
+</div>
+<div id="opponent-health">
+    Opponent Health: 0
+</div>
+
+<div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <div class="row">
+                    <div class="col-sm-3 bg-dark" id="r2d22">
+                        <img src="assets/images/r2d2.png" class="chosen-pic" id="r2d2pic2">
+                    </div>
+                    <div class="col-sm-3 border bg-dark" id="c3po2">
+                        <img src="assets/images/c3p0.png" class="chosen-pic" id="c3popic2">
+                    </div>
+                    <div class="col-sm-3" id="bb82">
+                        <img src="assets/images/bb8.png" class="chosen-pic" id="bb8pic2">
+                    </div>
+                    <div class="col-sm-3" id="gonk2">
+                        <img src="assets/images/gonk.png" class="chosen-pic" id="gonkpic2">
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row"></div>
+            </div>
+        </div>
+    </div>
+
+<script>
+//     var firstClick = true;
+// $( document ).ready(function() {
+//     //when first character clicked: 
+   
+//     $('.choose-row-pic').on('click', function(event){
+//         if (firstClick === true){
+//             console.log('first click')
+//             firstClick = false;
+//             $('#'+ event.target.id).css("visibility", "hidden");
+//             $('#'+ event.target.id + "2").css("visibility", "visible");
+//             if (event.target.id === "r2d2pic"){
+//                 console.log('do player = r2d2 stuff')
+//                 //set attack power and health
+//                 //display health
+//             }
+//             else if (event.target.id === "c3popic"){
+//                 console.log('do player = c3po stuff')
+//             }
+//             else if (event.target.id === "bb8pic"){
+//                 console.log('do player = bb8 stuff')
+//             }
+//             else{
+//                 console.log('do player = gonk stuff')
+//             }
+       
+//         }
+//          //else, (if it's the second click)
+//         else {  
+//             console.log('second click')
+//         }
+//     })
+        
+    
+   
+    
+// });
+</script>
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+img{
+    width:100%
+}
+body
+{background-color:grey;
+}
+
+
+.chosen-pic{
+    visibility: hidden;
+}
