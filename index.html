@@ -18,16 +18,16 @@
         <div class="col-sm-6">
             <div class="row">
                 <div class="col-sm-3 bg-dark" id="r2d2">
-                    <img src="assets/images/r2d2.png" id="r2d2pic" class="choose-row-pic">
+                    <img src="assets/images/r2d2.png" id="r2d2pic" class="img-thumbnail choose-row-pic">
                 </div>
                 <div class="col-sm-3 border bg-dark" id="c3po" class="choose-row-pic">
-                    <img src="assets/images/c3p0.png" id="c3popic" class="choose-row-pic">
+                    <img src="assets/images/c3p0.png" id="c3popic" class="img-thumbnail choose-row-pic">
                 </div>
                 <div class="col-sm-3" id="bb8">
-                    <img src="assets/images/bb8.png" id="bb8pic" class="choose-row-pic">
+                    <img src="assets/images/bb8.png" id="bb8pic" class="img-thumbnail choose-row-pic">
                 </div>
                 <div class="col-sm-3" id="gonk">
-                    <img src="assets/images/gonk.png" id="gonkpic" class="choose-row-pic">
+                    <img src="assets/images/gonk.png" id="gonkpic" class="img-thumbnail choose-row-pic">
                 </div>
             </div>
         </div>
@@ -37,13 +37,38 @@
     </div>
 </div>
 
-<button id="attack-btn">Attack</button>
+<button class="btn btn-danger"id="attack-btn">Attack</button>
 
 <div id="player-health">
     Your Health: 0
 </div>
 <div id="opponent-health">
     Opponent Health: 0
+</div>
+
+<div class="container" id="card-container">
+    <div class="row">
+        
+        <div class="col-sm-4" id="player-area">
+                <div class="card border" style="width: 18rem;">
+                        <img id="player-pic" class="card-img-top" src="assets/images/r2d2.png" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                </div>
+        </div>
+        <div class="col-sm-4">
+            <span id="vs">VS.</span>
+        </div>
+        <div class="col-sm-4" id="opponent-area">
+                <div class="card border" style="width: 18rem;">
+                        <img id="opponent-pic" class="card-img-top" src="assets/images/r2d2.png" alt="Card image cap">
+                        <div class="card-body">
+                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        </div>
+                      </div>
+        </div>
+    </div>
 </div>
 
 <div class="container">
@@ -70,43 +95,7 @@
         </div>
     </div>
 
-<script>
-//     var firstClick = true;
-// $( document ).ready(function() {
-//     //when first character clicked: 
-   
-//     $('.choose-row-pic').on('click', function(event){
-//         if (firstClick === true){
-//             console.log('first click')
-//             firstClick = false;
-//             $('#'+ event.target.id).css("visibility", "hidden");
-//             $('#'+ event.target.id + "2").css("visibility", "visible");
-//             if (event.target.id === "r2d2pic"){
-//                 console.log('do player = r2d2 stuff')
-//                 //set attack power and health
-//                 //display health
-//             }
-//             else if (event.target.id === "c3popic"){
-//                 console.log('do player = c3po stuff')
-//             }
-//             else if (event.target.id === "bb8pic"){
-//                 console.log('do player = bb8 stuff')
-//             }
-//             else{
-//                 console.log('do player = gonk stuff')
-//             }
-       
-//         }
-//          //else, (if it's the second click)
-//         else {  
-//             console.log('second click')
-//         }
-//     })
-        
-    
-   
-    
-// });
+
 </script>
     
 </body>
