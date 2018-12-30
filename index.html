@@ -13,87 +13,57 @@
     <title>RPG</title>
 </head>
 <body>
-<div class="container">
-    <div class="row">
-        <div class="col-sm-6">
-            <div class="row">
-                <div class="col-sm-3 bg-dark" id="r2d2">
-                    <img src="assets/images/r2d2.png" id="r2d2pic" class="img-thumbnail choose-row-pic">
+<div class="container" id="character-container">
+    <div class="row" style="height: 110px;">
+                <div class="col-sm-4 text-success"><h2 id="choose-instructions">Choose your Character</h2></div>
+                <div class="col-sm-1 bg-dark" id="r2d2">
+                    <img src="assets/images/R2D2.png" id="r2d2pic" class="img-thumbnail choose-row-pic">
                 </div>
-                <div class="col-sm-3 border bg-dark" id="c3po" class="choose-row-pic">
-                    <img src="assets/images/c3p0.png" id="c3popic" class="img-thumbnail choose-row-pic">
+                <div class="col-sm-1 border bg-dark" id="c3po" class="choose-row-pic">
+                    <img src="assets/images/C3PO.png" id="c3popic" class="img-thumbnail choose-row-pic">
                 </div>
-                <div class="col-sm-3" id="bb8">
-                    <img src="assets/images/bb8.png" id="bb8pic" class="img-thumbnail choose-row-pic">
+                <div class="col-sm-1" id="bb8">
+                    <img src="assets/images/BB-8.png" id="bb8pic" class="img-thumbnail choose-row-pic">
                 </div>
-                <div class="col-sm-3" id="gonk">
-                    <img src="assets/images/gonk.png" id="gonkpic" class="img-thumbnail choose-row-pic">
+                <div class="col-sm-1" id="gonk">
+                    <img src="assets/images/GNK Power Droid.png" id="gonkpic" class="img-thumbnail choose-row-pic">
                 </div>
-            </div>
-        </div>
-        <div class="col-sm-6">
-            <div class="row"></div>
-        </div>
-    </div>
-</div>
-
-<button class="btn btn-danger"id="attack-btn">Attack</button>
-
-<div id="player-health">
-    Your Health: 0
-</div>
-<div id="opponent-health">
-    Opponent Health: 0
-</div>
-
-<div class="container" id="card-container">
-    <div class="row">
+                <div class="col-sm-4 text-danger"><h2 id="counterattack-info"></h2></div>
         
-        <div class="col-sm-4" id="player-area">
-                <div class="card border" style="width: 18rem;">
-                        <img id="player-pic" class="card-img-top" src="assets/images/r2d2.png" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                </div>
-        </div>
-        <div class="col-sm-4">
-            <span id="vs">VS.</span>
-        </div>
-        <div class="col-sm-4" id="opponent-area">
-                <div class="card border" style="width: 18rem;">
-                        <img id="opponent-pic" class="card-img-top" src="assets/images/r2d2.png" alt="Card image cap">
-                        <div class="card-body">
-                          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                        </div>
-                      </div>
-        </div>
     </div>
 </div>
+<div class="container" id="main">
+    <button class="btn btn-danger btn-lg"id="attack-btn" disabled>Attack</button>
 
-<div class="container">
+
+    <div class="container" id="card-container">
         <div class="row">
-            <div class="col-sm-6">
-                <div class="row">
-                    <div class="col-sm-3 bg-dark" id="r2d22">
-                        <img src="assets/images/r2d2.png" class="chosen-pic" id="r2d2pic2">
+            
+            <div class="col-sm-4" id="player-area">
+                    <div class="card border" style="width: 18rem;">
+                            <img id="player-pic" class="card-img-top" src="assets/images/placeholder.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text" id="player-name">Name</p>
+                            <p class="card-text" id="player-health">Health: </p>
+                            </div>
                     </div>
-                    <div class="col-sm-3 border bg-dark" id="c3po2">
-                        <img src="assets/images/c3p0.png" class="chosen-pic" id="c3popic2">
-                    </div>
-                    <div class="col-sm-3" id="bb82">
-                        <img src="assets/images/bb8.png" class="chosen-pic" id="bb8pic2">
-                    </div>
-                    <div class="col-sm-3" id="gonk2">
-                        <img src="assets/images/gonk.png" class="chosen-pic" id="gonkpic2">
-                    </div>
-                </div>
             </div>
-            <div class="col-sm-6">
-                <div class="row"></div>
+            <div class="col-sm-4">
+                <span id="vs">VS.</span>
+            </div>
+            <div class="col-sm-4" id="opponent-area">
+                    <div class="card border" style="width: 18rem;">
+                            <img id="opponent-pic" class="card-img-top" src="assets/images/placeholder.png" alt="Card image cap">
+                            <div class="card-body">
+                                    <p class="card-text" id="opponent-name">Name</p>
+                                    <p class="card-text" id="opponent-health">Health: </p>
+                            </div>
+                    </div>
             </div>
         </div>
     </div>
+
+
 
 
 </script>

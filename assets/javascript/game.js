@@ -8,41 +8,47 @@
             attack: function(){
                 opponent.healthPoints -= this.attackPoints;
                 this.attackPoints += this.baseAttackStrength;
-                displayHealth();
-                  
+                displayStats();
+                $('#choose-instructions').html('You attacked ' + opponent.name + " for " + player.attackPoints + " damage.");
+                $('#choose-instructions').removeClass('text-danger').addClass('text-success');
             },
         };
 
         var opponent = {
             name: '',
+            deadPicSrc: '',
             healthPoints: 0,
             CounterAttackPoints: 0,
             counterAttack: function(){
-                player.healthPoints -= this.counterAttackPoints;
-                //display health
-                displayHealth();
-                
-            },
+                player.healthPoints -= this.CounterAttackPoints;
+                displayStats();
+                $('#counterattack-info').html(opponent.name + " counter attacked for " + opponent.CounterAttackPoints + " damage.")  
+                },
         }
         function selectPlayer(name, baseAttack, health){
             player.name = name;
             player.attackPoints = baseAttack;
             player.baseAttackStrength = baseAttack;
             player.healthPoints = health;
-            displayHealth();
-
-
+            displayStats();
+            $('#choose-instructions').html('Choose your Opponent');
+            $('#choose-instructions').removeClass('text-success').addClass('text-danger');
         };
         function selectOpponent(name, counter, health){
-            player.name = name;
-            opponent.counterAttackPoints = counter;
+            opponent.name = name;
+            opponent.CounterAttackPoints = counter;
             opponent.healthPoints = health;
-            displayHealth();
+            opponent.deadPicSrc = "assets/images/dead_"+ name + ".png"
+            displayStats();
+            $('#attack-btn').prop("disabled", false)
+            $('#choose-instructions').html('FIGHT!!');
         };
 
-        function displayHealth(){
+        function displayStats(){
             $('#player-health').html("Your Health: " + player.healthPoints);
             $('#opponent-health').html("Opponent Health: " + opponent.healthPoints)
+            $('#player-name').html(player.name);
+            $('#opponent-name').html(opponent.name);
         }
         function handleOpponentLoss(){
             defeatedFoes++ 
@@ -51,18 +57,33 @@
             }
             else{
                 clickCount = 1;
-                alert('you defeated your opponent, choose another')
-                currentOpponent.css("visibility", "hidden");
+                //disable attack button
+                $('#attack-btn').prop("disabled", true)
+                $('#counterattack-info').html('');
+                $('#choose-instructions').html("You defeated " + opponent.name + "!! Choose another opponent");
+                $('#opponent-pic').attr("src", "assets/images/dead_" + opponent.name + ".png")
             }
 
         }
         function handlePlayerLoss(){
-            alert('you lose')
+           
+            currentOpponent.css("visibility", "hidden");
+            $('#choose-instructions').html("YOU LOSE. ")
+            $('#counterattack-info').html('');
+            $('#attack-btn').css('display', 'none')
+            $('#opponent-area').css('display', 'none')
+            $('#vs').css('display', 'none')
 
         }
         function handlePlayerWin(){
             currentOpponent.css("visibility", "hidden");
-            alert('YOU WIN!!!')
+            $('#choose-instructions').html("YOU HAVE DEFEATED ALL FOES. " + player.name +  " IS HEREBY DECLARED KING OF ALL DROIDS!!!")
+            $('#counterattack-info').html('');
+            $('#attack-btn').css('display', 'none')
+            $('#opponent-area').css('display', 'none')
+            $('#vs').css('display', 'none')
+
+
         }
         var clickCount = 0;
         var currentOpponent = ''
@@ -84,20 +105,20 @@
                 //$('#'+ event.target.id + "2").css("visibility", "visible");
                 
                 if (event.target.id === "r2d2pic"){  
-                    selectPlayer("R2D2", 15, 110);  
+                    selectPlayer("R2D2", 14, 110);  
                     $('#player-pic').attr("src", "assets/images/r2d2.png")                      
                 }
                 else if (event.target.id === "c3popic"){
-                    selectPlayer("C3PO",12, 120);  
-                    $('#player-pic').attr("src", "assets/images/c3p0.png") 
+                    selectPlayer("C3PO",13, 115);  
+                    $('#player-pic').attr("src", "assets/images/C3PO.png") 
                 }
                 else if (event.target.id === "bb8pic"){
-                    selectPlayer("BB-8", 18, 100); 
-                    $('#player-pic').attr("src", "assets/images/bb8.png") 
+                    selectPlayer("BB-8", 17, 100); 
+                    $('#player-pic').attr("src", "assets/images/BB-8.png") 
                 }
                 else{
-                    selectPlayer("GNK Power Droid", 10, 130); 
-                    $('#player-pic').attr("src", "assets/images/gonk.png")  
+                    selectPlayer("GNK Power Droid", 9, 130); 
+                    $('#player-pic').attr("src", "assets/images/GNK Power Droid.png")  
                 }
            
             }
@@ -109,20 +130,20 @@
                 currentOpponent = $('#'+ event.target.id + "2")
                 
                 if (event.target.id === "r2d2pic"){                   
-                    selectOpponent("R2D2", 20, 110)//name, counter, health   
-                    $('#opponent-pic').attr("src", "assets/images/r2d2.png")  
+                    selectOpponent("R2D2", 23, 110)  
+                    $('#opponent-pic').attr("src", "assets/images/R2D2.png")  
                 }
                 else if (event.target.id === "c3popic"){
-                    selectOpponent("C3PO", 16, 120);
-                    $('#opponent-pic').attr("src", "assets/images/c3p0.png")  
+                    selectOpponent("C3PO", 19, 120);
+                    $('#opponent-pic').attr("src", "assets/images/C3PO.png")  
                 }
                 else if (event.target.id === "bb8pic"){
-                    selectOpponent("BB-8", 22, 100);
-                    $('#opponent-pic').attr("src", "assets/images/bb8.png")  
+                    selectOpponent("BB-8", 25, 100);
+                    $('#opponent-pic').attr("src", "assets/images/BB-8.png")  
                 }
                 else{
-                    selectOpponent("GNK Power Droid", 14, 130);
-                    $('#opponent-pic').attr("src", "assets/images/gonk.png")  
+                    selectOpponent("GNK Power Droid", 17, 130);
+                    $('#opponent-pic').attr("src", "assets/images/GNK Power Droid.png")  
                 }
                 clickCount++
                 console.log('clickCount: ' + clickCount)
@@ -140,6 +161,9 @@
             }
             else{
                 opponent.counterAttack();
+                if (player.healthPoints <= 0){
+                    handlePlayerLoss()
+                }
             }
             
             

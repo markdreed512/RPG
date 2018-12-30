@@ -1,13 +1,28 @@
 img{
     width:100%;
-    background-color: red;
+    
     box-shadow:2px 2px 8px black;
 }
-body
-{background-color:grey;
+body{
+    background-color:grey;
+    text-align: center;
+
+}
+#player-pic{
+    background-color: green;
+}
+#opponent-pic{
+    background-color: red;
 }
 
-
+#character-container{
+    width: 100%;
+    background-color: black;
+}
+#character-container .row{
+    width: 100%;
+    margin: 0 auto;
+}
 .chosen-pic{
     visibility: hidden;
 }
@@ -20,7 +35,7 @@ body
     position:relative;
     font-size: 50px;
     top: 50px;
-    left: 50px;
+    left: 20px;
     
 }
 #card-container{
@@ -30,4 +45,6 @@ body
     height: 300px;
     width: auto;
 }
-/* .card{display: inline-block;} */
+#main{
+    margin-top: 50px;
+}
