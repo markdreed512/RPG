@@ -45,8 +45,8 @@
         };
 
         function displayStats(){
-            $('#player-health').html("Your Health: " + player.healthPoints);
-            $('#opponent-health').html("Opponent Health: " + opponent.healthPoints)
+            $('#player-health').html("Health: " + player.healthPoints);
+            $('#opponent-health').html("Health: " + opponent.healthPoints)
             $('#player-name').html(player.name);
             $('#opponent-name').html(opponent.name);
         }
