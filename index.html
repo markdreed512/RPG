@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Black+Ops+One|Iceberg" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
     <script src="assets/javascript/game.js"></script>
@@ -15,7 +16,7 @@
 <body>
 <div class="container" id="character-container">
     <div class="row" style="height: 110px;">
-                <div class="col-sm-4 text-success"><h2 id="choose-instructions">Choose your Character</h2></div>
+                <div class="col-sm-4 text-dark"><h2 id="top-left-instructions"></h2></div>
                 <div class="col-sm-1 bg-dark" id="r2d2">
                     <img src="assets/images/R2D2.png" id="r2d2pic" class="img-thumbnail choose-row-pic">
                 </div>
@@ -28,11 +29,13 @@
                 <div class="col-sm-1" id="gonk">
                     <img src="assets/images/GNK Power Droid.png" id="gonkpic" class="img-thumbnail choose-row-pic">
                 </div>
-                <div class="col-sm-4 text-danger"><h2 id="counterattack-info"></h2></div>
+                <div class="col-sm-4 "><h2 id="counterattack-info"></h2></div>
         
     </div>
 </div>
 <div class="container" id="main">
+    <p id="game-title">DROID DECIMATION</p>
+    <h3 id="choose-instructions">Choose your character</h3><br>
     <button class="btn btn-danger btn-lg"id="attack-btn" disabled>Attack</button>
 
 
@@ -43,7 +46,7 @@
                     <div class="card border" style="width: 18rem;">
                             <img id="player-pic" class="card-img-top" src="assets/images/placeholder.png" alt="Card image cap">
                             <div class="card-body">
-                            <h1 class="card-text display-4" id="player-health">Health: </h1>
+                            <h1 class="card-text" id="player-health">Health: </h1>
                             </div>
                     </div>
             </div>
@@ -55,7 +58,7 @@
                             <img id="opponent-pic" class="card-img-top" src="assets/images/placeholder.png" alt="Card image cap">
                             <div class="card-body">
                                     
-                                    <h1 class="card-text display-4" id="opponent-health">Health: </h1>
+                                    <h1 class="card-text" id="opponent-health">Health: </h1>
                             </div>
                     </div>
             </div>

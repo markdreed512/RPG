@@ -9,8 +9,9 @@
                 opponent.healthPoints -= this.attackPoints;
                 this.attackPoints += this.baseAttackStrength;
                 displayStats();
-                $('#choose-instructions').html('You attacked ' + opponent.name + " for " + player.attackPoints + " damage.");
+                $('#top-left-instructions').html('You attacked ' + opponent.name + " for " + player.attackPoints + " damage.");
                 $('#choose-instructions').removeClass('text-danger').addClass('text-success');
+                
             },
         };
 
@@ -41,7 +42,11 @@
             opponent.deadPicSrc = "assets/images/dead_"+ name + ".png"
             displayStats();
             $('#attack-btn').prop("disabled", false)
-            $('#choose-instructions').html('FIGHT!!');
+            $('#attack-btn').css("display", "inline")
+            $('#top-left-instructions').text('FIGHT!!');
+            $('#choose-instructions').html('')
+            $('#game-title').css("display", "none")
+
         };
 
         function displayStats(){
@@ -58,8 +63,9 @@
             else{
                 clickCount = 1;
                 //disable attack button
-                $('#attack-btn').prop("disabled", true)
+                $('#attack-btn').css("display", "none")
                 $('#counterattack-info').html('');
+                $('#top-left-instructions').html('');
                 $('#choose-instructions').html("You defeated " + opponent.name + "!! Choose another opponent");
                 $('#opponent-pic').attr("src", "assets/images/dead_" + opponent.name + ".png")
             }
@@ -69,16 +75,19 @@
            
             currentOpponent.css("visibility", "hidden");
             $('#choose-instructions').html("YOU LOSE. ")
+            $('#top-left-instructions').html('');
             $('#counterattack-info').html('');
             $('#attack-btn').css('display', 'none')
             $('#opponent-area').css('display', 'none')
             $('#vs').css('display', 'none')
+            $('#player-pic').attr("src", "assets/images/dead_" + player.name + ".png" )
 
         }
         function handlePlayerWin(){
             currentOpponent.css("visibility", "hidden");
             $('#choose-instructions').html("YOU HAVE DEFEATED ALL FOES. " + player.name +  " IS HEREBY DECLARED KING OF ALL DROIDS!!!")
             $('#counterattack-info').html('');
+            $('#top-left-instructions').html('');
             $('#attack-btn').css('display', 'none')
             $('#opponent-area').css('display', 'none')
             $('#vs').css('display', 'none')

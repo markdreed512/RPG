@@ -4,8 +4,9 @@ img{
     box-shadow:2px 2px 8px black;
 }
 body{
-    background-color:grey;
+    background-color:black;
     text-align: center;
+    color: white;
 
 }
 #player-pic{
@@ -17,7 +18,7 @@ body{
 
 #character-container{
     width: 100%;
-    background-color: black;
+    background-color: rgb(100, 90, 59);
 }
 #character-container .row{
     width: 100%;
@@ -42,12 +43,20 @@ body{
     width: 65%;
 }
 .card-img-top{
-    height: 300px;
+    height: 250px;
     width: auto;
 }
 .card-text{
     font-size: 30px;
 }
 #main{
-    margin-top: 50px;
+    margin-top: 30px;
+}
+#game-title{
+    font-family: 'Iceberg', cursive;
+color: rgb(48, 150, 48);
+font-size: 70px;
+}
+#attack-btn{
+    display: none;
 }
